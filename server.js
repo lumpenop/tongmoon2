@@ -9,7 +9,7 @@ const mysql = require('mysql');
 const {sequelize} = require('./models');
 
 
-sequelize.sync({force:false,})
+sequelize.sync({force:true,})
 .then(()=>{
     console.log('접속 완료');
 }).catch((e)=>{
