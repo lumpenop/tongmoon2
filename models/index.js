@@ -21,5 +21,12 @@ db.Sequelize = Sequelize;
 db.user = models.user;
 db.commment = models.commment;
 db.history = models.history;
+db.bcode = bcode;
+db.pcode = pcode;
+db.mcode = mcode;
+db.store = store;
+db.storelist = storelist;
+db.itemreco = itemreco;
+db.contentsreco = contentsreco;
 
 module.exports = db;
