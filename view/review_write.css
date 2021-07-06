@@ -1,1 +1,20 @@
-        <li></li>
+.review_pd{
+    height: 10rem;
+    width: 100%;
+}
+.pd_img{
+    float: left;
+    height: 5rem;
+    width: 5rem;
+    color: red;
+    padding: 1rem;
+}
+
+.pd_name{
+    display: inline;
+    margin-left: 1rem;
+}
+
+.pd_title{
+    
+}
