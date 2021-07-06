@@ -13,3 +13,13 @@ router.get('/:order_number/order_history',userController.order_history)//주문�
 router.get('/:order_number/pay',userController.pay)//결제화면
 router.post('/:order_number/pay',userController.payPost)//결제완료
 
+
+//네이버 로그인
+router.get('/auth/naver/callback',userController.naverCB);
+router.get('/auth/naver',userController.naverLogin);
+
+//카카오 로그인
+router.get('/auth/kakao/callback',userController.kakaoCB);
+router.get('/auth/kakao',userController.kakaoLogin);
+
+
