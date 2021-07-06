@@ -1,3 +1,75 @@
 .review_wrap{
+}
 
+.review_point{
+ width: 100%;   
+ height: 100px;
+ background-color: yellow;
+}
+
+.user_img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 160px;
+    background: #FFFFFF;
+    margin: 15px 50px 0 20px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.user_point{
+    padding: 20px;
+}
+
+.user_point > p{
+    margin-top: 10px;
+}
+
+.review_view{
+  
+}
+
+.review_view> h3{
+    width: 100%;   
+    height: 10px;
+    padding: 20px;
+}
+
+.review_product{
+
+}
+.review_pd_img{
+    float: left;
+    width: 60px;
+    height: 80px;
+    border-radius: 160px;
+    background: #FFFFFF;
+    margin: 15px 50px 0 20px;
+    
+}
+
+.inner-star::before {
+    color: #FF9600;
+}
+
+.outer-star {
+    position: relative;
+    display: inline-block;
+    color: #CCCCCC;
+}
+
+.inner-star {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.outer-star::before,
+.inner-star::before {
+    content: '\f005 \f005 \f005 \f005 \f005';
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
 }

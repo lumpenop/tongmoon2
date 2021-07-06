@@ -7,15 +7,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="review.css">
     <link rel="stylesheet" href="common.css">
+    
 </head>
 <body>
 <div>
     <div class="review_wrap">
         <div>상단 네비</div>
+
         <div class="review_point">
             <ul>
-                <li>img</li>
-                <li>
+                <li class="user_img"></li>
+                <li class="user_point">
                     <p>이름</p>
                     <p>적립된 포인트</p>
                 </li>
@@ -23,18 +25,24 @@
         </div>
     </div>
     <div class="review_view_wrap">
-        <dlv class="review_view">리뷰작성
+        <dlv class="review_view">
+            <h3>리뷰작성(50)</h3>
+
             <ul>
-                <li>img</li>
-                <li>
+                <li class="review_pd_img">img</li>
+                <li class="review_product">
                     <p>물건명</p>
                     <p>구매완료일</p>
-                    <p>별점</p>
+                    <div class='RatingStar'>
+                        <div class='RatingScore'>
+                          <div class='outer-star'><div class='inner-star'></div></div>
+                        </div>
+                      </div>
                     <p>작성 기한</p>
                 </li>
             </ul>
         </dlv>
-        <dlv class="review_viewed">작성한 리뷰
+        <!-- <dlv class="review_viewed">작성한 리뷰
             <ul>
                 <li>
                     <p>img</p>
@@ -46,12 +54,31 @@
                     <p>수정버튼</p>
                 </li>
             </ul>
-        </dlv>
-        </ul>
+        </dlv> -->
     </div>
     </div>
 
 
 
 </body>
+<script>
+    ratings = {
+        RatingScore: 4.5
+    }
+    totalRating = 5;
+    table = document.querySelector('.RatingStar');
+
+    function rateIt() {
+        for (rating in ratings) {
+            ratingPercentage = ratings[rating] / totalRating * 100;
+            ratingRounded = Math.round(ratingPercentage / 10) * 10 + '%';
+            star = table.querySelector(`.${rating} .inner-star`);
+            numberRating = table.querySelector(`.${rating} .numberRating`);
+            star.style.width = ratingRounded;
+            numberRating.innerText = ratings[rating];
+        }
+    }
+    rateIt()
+</script>
+
 </html>
