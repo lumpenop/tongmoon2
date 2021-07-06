@@ -1,20 +1,20 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('mcode', { //중분류코드
-    Big: { //대분류
+  return sequelize.define('mcode', {
+    Big: {
       type: DataTypes.STRING(50),
       allowNull: false,
       primaryKey: true
     },
-    Mid: { //중분류
+    Mid: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    Pname: { //상품이름
+    Pname: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    Ename: { //영어이름
+    Ename: {
       type: DataTypes.STRING(100),
       allowNull: false
     }

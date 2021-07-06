@@ -19,7 +19,7 @@ sequelize.sync({force:true,})
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.set('view engine','html')
-nunjucks.configure('view',{
+nunjucks.configure('views',{
     express:app
 })
 

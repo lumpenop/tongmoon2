@@ -1,6 +1,12 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('user', {
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
     userid: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -9,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    gender: {//?
+    gender: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
@@ -21,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    user_number: {//전화번호
+    user_number: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
@@ -29,21 +35,31 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    point: {//포인트
+    point: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    chargecash: {//충전금액
+    chargecash: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    totalprice: {//총구매금액
+    totalprice: {
       type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'user',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

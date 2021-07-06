@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('contentsreco', { //컨텐츠 기반 추천항목
+  return sequelize.define('contentsreco', {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true
     },
     user_id: {
@@ -17,6 +17,16 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'contentsreco',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };
