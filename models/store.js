@@ -1,33 +1,49 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('store', { //매장
-    S_code: { //매장코드
+  return sequelize.define('store', {
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
+    S_code: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    building: { //상가빌딩
+    building: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    S_name: { //매장이름
+    S_name: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    ho: { //호수
+    ho: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    number: { //전화번호
+    number: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    star: { //평점
+    star: {
       type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'store',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

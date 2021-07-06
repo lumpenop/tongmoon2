@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('./controller');
+const controller = require('./main.controller');
 const multer = require('multer'); 
 const path = require('path'); 
 // const auth = require('../../middleware/auth');
@@ -16,11 +16,7 @@ const path = require('path');
 //     })
 // });
 
-router.get('/test',controller.test)
-router.get('/test/:localUrl',controller.test)
-router.post('/login',controller.login_check)
-router.get('/login',controller.login)
-router.post('/join',controller.join)
+
 router.get('/',controller.main);
 
 

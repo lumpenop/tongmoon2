@@ -1,29 +1,45 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('comment', {
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
     userid: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    review: {//후기
+    review: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    star: {//별점 string?
+    star: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    S_code: {//상점코드
+    S_code: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    product: {//상품이름????
+    product: {
       type: DataTypes.STRING(100),
       allowNull: false
     }
   }, {
     sequelize,
     tableName: 'comment',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

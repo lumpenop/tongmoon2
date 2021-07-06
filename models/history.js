@@ -1,37 +1,53 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('history', {
-    C_code: {//코드
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
+    C_code: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    B_time: {//산시간
+    B_time: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    R_time: {//예약시간
+    R_time: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    userid: {//산사람
+    userid: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    seller: {//상점
+    seller: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    Get_num: {//주문번호
+    Get_num: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    state: {//상태
+    state: {
       type: DataTypes.STRING(100),
       allowNull: false
     }
   }, {
     sequelize,
     tableName: 'history',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

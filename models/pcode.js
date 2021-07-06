@@ -1,24 +1,24 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('pcode', { //상품코드
-    Big: { //대분류
+  return sequelize.define('pcode', {
+    Big: {
       type: DataTypes.STRING(50),
       allowNull: false,
       primaryKey: true
     },
-    Mid: { //중분류
+    Mid: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    Sml: { //소분류
+    Sml: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    Pname: { //상품명
+    Pname: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    C_code: { //카테고리코드
+    C_code: {
       type: DataTypes.STRING(50),
       allowNull: false
     }
