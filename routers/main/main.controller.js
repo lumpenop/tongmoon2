@@ -2,11 +2,7 @@ const {user} = require('../../models/index')
 
 
 let main = async(req,res)=>{
-    let result = await user.findAll({})
-    console.log(result);
-    res.render('./join.html',{
-        result
-    })
+    res.send('yoyouyo');
 }
 
 // let join = async(req,res)=>{
