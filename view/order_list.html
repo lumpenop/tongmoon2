@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order_list.css">
+    <link rel="stylesheet" href="common.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="wrap">
     <div class="order_wrap">
-        <div>상단 네비</div>
+        <div>주문목록</div>
             <li>
-                <input type="search">
+                <input class="order_search" type="text">
             </li>
         </div>
     </div>
     <div class="order_list_wrap">
-        <dlv class="order_view">리뷰작성
+        <dlv class="order_view">
             <ul>
+                <li>
+                    <p>픽업완료</p>
+                    <P>6/29 (화) 7시</P>
+                </li>
                 <li>img</li>
                 <li>
                     <p>물건명</p>
-                    <p>구매완료일</p>
-                    <p>별점</p>
-                    <p>작성 기한</p>
+                    <p>16490원</p>
+                    <p>1개</p>
+                    <button>장바구니 담기</button>
                 </li>
             </ul>
+            <li>
+                <button>구매후기쓰기</button>
+            </li>
         </dlv>
+    </div>
     </body>
 </html>

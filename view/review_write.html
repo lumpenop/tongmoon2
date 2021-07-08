@@ -8,28 +8,55 @@
     <link rel="stylesheet" href="common.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js">
+        $(".star_rating a").click(function () {
+        $(this).parent().children("a").removeClass("on");
+        $(this).addClass("on").prevAll("a").addClass("on");
+        return false;
+    });</script>
     <title>Document</title>
 </head>
 <body>
-    <div class="order_wrap">
-        <div>상단 네비</div>
-    </div>
+<div class="order_wrap">
+    <div>상단 네비</div>
+
 
     <div class="review_point">
-        <h1 class="pd_title"><i class="fas fa-box"></i>상품 품질 평가</h1>
+        <h2 class="pd_title"><i class="fas fa-box"></i>상품 품질 평가</h2>
         <ul>
             <li class="review_pd">
-                <p class="pd_img">이미지</p>
-                <p class="pd_name">상품명<p>
+                <p class="pd_img">
+                    <img
+                        src="https://thumbnail8.coupangcdn.com/thumbnails/remote/600x280ex/image/retail/images/335345303053167-d577be28-06da-4ac7-8e30-c1f7be1c0a50.png">
+                </p>
+                <br>
+                <p class="pd_name">Now Foods 오가닉 스피루리나 500mg 타블렛, 500개입 ,1개<p>
             </li>
 
-            <li class="">
+            <li class="review_star">
                 <p>품질에 대해 얼마나 만족하시나요?</p>
-                <p>별점체크란</p>
+                <p class="star_rating">
+                    <a href="#" class="on">★</a>
+                    <a href="#" class="on">★</a>
+                    <a href="#" class="on">★</a>
+                    <a href="#">★</a>
+                    <a href="#">★</a>
+                </p>
+                <p>이 상품을 상세히 평가해주세요</p>
             </li>
+            <div class="review_photo">
+                <li class="review_text">상품 품질에 대한 고객님의 솔직한 평가를 남겨주세요.
+                    (상품과 관계없는 판매자 서비스 평가 내용은 위 판매자 서비스 평가란에 남겨주세요)
+                </li>
+                <a href="#">첨부하기</a>
+            </div>
         </ul>
         </dlv>
-        <div>리뷰 작성 완료</div>
+        <div class="review_foot_btn">
+            <button>리뷰 작성 완료</button>
+        </div>
+    </div>
+</div>
 </body>
-</html>
 
+</html>
