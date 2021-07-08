@@ -1,0 +1,72 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0; padding: 0; overflow-x: hidden;}
+ul,li{text-decoration: none;}
+a{
+    text-decoration: none;
+}
+
+body{
+    padding-top:10vh;
+    padding-bottom:10vh;
+}
+#wrap{width:100vw;}
+
+#header{
+    background: #e3e3e3;
+    width: 100vw;
+    position: fixed;
+    height:10vh;
+    z-index: 3;
+    top:0;
+
+}
+#header_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+#search{
+    width: 55%;
+}
+#seach_box{
+    width: 94%;
+    height: 3em;
+}
+
+#text_box{
+    width: 100%;
+    height: 10vw;
+    padding: 3vw;
+    font-size: 6vw;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+#product_box{
+    margin-top: 3vh;
+    width: 100vw;
+}
+.product{
+    width: 80vw;
+    height: 30vh;
+    margin: 3vh auto;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    padding: 2%;
+    box-sizing: border-box;
+}
+.p_picture{
+    display: inline-block;
+    width: 40%;
+    height: 95%;
+}
+.p_text{
+    display: inline-block;
+    width: 55%;
+    height: 95%;
+}
+.text_low{
+    margin-top: 0.3em;
+}

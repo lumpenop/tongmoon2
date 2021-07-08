@@ -1,0 +1,39 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0; padding: 0; overflow-x: hidden;}
+ul,li{text-decoration: none;}
+a{
+    text-decoration: none;
+}
+
+
+#wrap{width:100vw;}
+
+#header{
+    width: 100vw;
+    height: 10vh;
+    background: coral;
+    box-sizing: border-box;
+}
+#header>h2{
+    display: inline-block;
+}
+#content{
+    width: 100vw;
+    text-align: center;
+}
+#content>div{
+    width: 80vw;
+    height: 35vh;
+    margin: 3vh auto;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    padding: 3.5%;
+    box-sizing: border-box;
+}
+#pay_btn{
+    display: inline-block;
+    width: 40%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+    background: rgb(99, 99, 230);
+}

@@ -1,0 +1,93 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0; padding: 0; overflow-x: hidden;}
+ul,li{text-decoration: none;}
+a{
+    text-decoration: none;
+}
+
+
+#wrap{width:100vw;}
+
+#top_test{
+    width: 7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    box-sizing: border-box;
+    background: yellow;
+}
+/* nothing part */
+#nothing{
+    width: 70vw;
+    height: 65vh;
+    margin: 10% auto 0 ;
+    padding: 1.8em;
+    box-sizing: border-box;
+    text-align: center;
+}
+#nothing>a{
+    width: 60%;
+    height: 15%;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 1vw;
+    box-sizing: border-box;
+    font-size: 2vw;
+    border-radius: 2em;
+    color: black;
+}
+#nothing>a:hover{
+    background: blueviolet;
+}
+.text_tum{
+    margin-top: 0.4em;
+}
+ /* nothing end */
+
+/* product part */
+
+#cart_contens{
+    width: 100vw;
+}
+.product{
+    width: 80vw;
+    height: 40vh;
+    margin: 3vh auto;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    padding: 2%;
+    box-sizing: border-box;
+}
+.p_picture{
+    display: inline-block;
+    width: 30%;
+    height: 95%;
+}
+.p_text{
+    display: inline-block;
+    width: 65%;
+    height: 95%;
+}
+.text_low{
+    margin-top: 1vh;
+}
+.del_btn{
+    width: 20vw;
+    display: inline-block;
+    margin-top: 1em;
+    border: 1px solid black;
+    text-align: center;
+}
+.cart_btn{
+    width: 25vw;
+    display: inline-block;
+    margin-top: 1em;
+    border: 1px solid black;
+    text-align: center;
+}

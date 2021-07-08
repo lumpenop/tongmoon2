@@ -1,0 +1,71 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; padding: 0; overflow-x: hidden;}
+
+li,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#wrap{
+    width: 100vw;
+}
+#header{
+    width: 100%;
+    height: 4em;
+}
+#header>ul{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+#header>ul>li{
+    width: 20%;
+    height: 100%;
+    margin-right: 3%;
+    display: inline-block;
+    border-radius: 0.5em;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    background: #ffffff;
+    padding: 2%;
+    box-sizing: border-box;
+}
+#middle{
+    width: 100%;
+    height: 35em;
+}
+#middle>ul{
+    width: 100%;
+    height: 100%;
+}
+#middle>ul>li{
+    width: 45%;
+    height: 30%;
+    margin: 2% 2% 0 0;
+    display: inline-block;
+    float: left;
+    border-radius: 0.5em;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    background: #ffffff;
+    padding: 4%;
+    box-sizing: border-box;
+}
+#footer{
+    width: 100vw;
+    height: 11em;
+    overflow: hidden;
+}
+#footer>ul{
+    width: 100vw;
+    height: 30vh;
+    white-space:nowrap;
+    float: left;
+}
+#footer>ul>li{
+    display: inline-block;
+    width: 70vw;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    padding: 4%;
+    box-sizing: border-box;
+}
