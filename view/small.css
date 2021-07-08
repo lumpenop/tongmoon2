@@ -1,0 +1,55 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0; padding: 0; overflow-x: hidden;}
+ul,li{text-decoration: none;}
+a{
+    text-decoration: none;
+}
+
+
+#wrap{width:100vw;}
+
+#header{
+    background: gray;
+    width: 100vw;
+    position: fixed;
+
+}
+#header_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+#search{
+    width: 70%;
+}
+#seach_box{
+    width: 94%;
+    height: 3em;
+}
+
+#product_box{
+    margin-top: 3em;
+    width: 100vw;
+}
+.product{
+    width: 80vw;
+    height: 35vh;
+    margin: 3vh auto;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em gray;
+    padding: 2%;
+    box-sizing: border-box;
+}
+.p_picture{
+    display: inline-block;
+    width: 30%;
+    height: 95%;
+}
+.p_text{
+    display: inline-block;
+    width: 65%;
+    height: 95%;
+}
+.text_low{
+    margin-top: 0.3em;
+}

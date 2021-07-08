@@ -1,0 +1,73 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; padding: 0; overflow-x: hidden;}
+
+li,ul{
+    list-style: none;
+}
+body{
+    padding-top: 10vh;
+}
+a{
+    text-decoration: none;
+}
+#wrap{
+    width: 100%;
+}
+#header{
+    width: 100vw;
+    height: 10vh;
+    background: cornflowerblue;
+    position: fixed;
+    top: 0;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+#header>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#header>ul>li:nth-child(2){
+    width: 90%;
+    text-align: center;
+}
+.text_tum{
+    width: 100%;
+    height: 6vh;
+}
+
+
+/* header end */
+/* money box */
+
+#money_box{
+    width: 100%;
+    height: 30vh;
+    padding: 5vh;
+    box-sizing: border-box;
+    background: cornflowerblue;
+}
+.charge{
+    margin-top: 4vh;
+}
+
+#point_box{
+    width: 100%;
+    height: 30vh;
+    padding: 5vh;
+    box-sizing: border-box;
+    background: green;
+}
+
+#advertixement{
+    width: 100%;
+    height: 30vh;
+    background: grey;
+    padding: 2vh;
+    box-sizing: border-box;
+
+}
+#advertixement>img{
+    width: 100%;
+    height: 70%;
+}
