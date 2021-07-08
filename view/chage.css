@@ -1,4 +1,4 @@
-*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; padding: 0; overflow-x: hidden;}
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; padding: 0; overflow: hidden;}
 
 li,ul{
     list-style: none;
@@ -48,7 +48,17 @@ a{
     background: cornflowerblue;
 }
 .charge{
+    display: block;
+    width: 80%;
+    height: 5vh;
+    border: 1px solid black;
     margin-top: 4vh;
+    text-align: center;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+.charge:hover{
+    background: brown;
 }
 
 #point_box{

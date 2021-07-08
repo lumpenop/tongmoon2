@@ -1,0 +1,53 @@
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; padding: 0; overflow: hidden;}
+
+li,ul{
+    list-style: none;
+}
+body{
+    padding-top: 10vh;
+}
+a{
+    text-decoration: none;
+}
+#wrap{
+    width: 100%;
+}
+#header{
+    width: 100vw;
+    height: 10vh;
+    background: cornflowerblue;
+    position: fixed;
+    top: 0;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+#header>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#header>ul>li:nth-child(2){
+    width: 90%;
+    text-align: center;
+}
+
+#chage_box{
+    width: 80vw;
+    height: 70vh;
+    background: cornflowerblue;
+    margin: 10vh auto 0;
+    padding: 5vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+#coin{
+    width: 20vh;
+    margin: 0 auto;
+}
+.mar{
+    margin-top: 6vh;
+}
+.charge_btn{
+    display: block;
+} 
