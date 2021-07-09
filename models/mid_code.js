@@ -1,26 +1,22 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('mcode', {
-    Big: {
-      type: DataTypes.STRING(50),
+  return sequelize.define('mid_code', {
+    mid_code: {
+      type: DataTypes.STRING(100),
       allowNull: false,
       primaryKey: true
     },
-    Mid: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
-    Pname: {
+    mid_name: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    Ename: {
+    top_code: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'mcode',
+    tableName: 'mid_code',
     timestamps: false,
     indexes: [
       {
@@ -28,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "Big" },
+          { name: "mid_code" },
         ]
       },
     ]

@@ -1,22 +1,23 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('contentsreco', {
+  return sequelize.define('top_code', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    user_id: {
-      type: DataTypes.STRING(50),
-      allowNull: true
+    top_code: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     },
-    file02: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+    top_name: {
+      type: DataTypes.STRING(100),
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'contentsreco',
+    tableName: 'top_code',
     timestamps: false,
     indexes: [
       {

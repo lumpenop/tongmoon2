@@ -1,44 +1,51 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('user', {
-    userid: {
+  return sequelize.define('store_list', {
+    product_code: {
       type: DataTypes.STRING(100),
       allowNull: false,
+      defaultValue: "0",
       primaryKey: true
     },
-    username: {
+    store_code: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    product_name: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    gender: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    user_email: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    user_number: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    user_birth: {
-      type: DataTypes.STRING(100),
-      allowNull: true
-    },
-    point: {
+    price: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0
+      allowNull: true
     },
-    cash: {
+    origin: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    img: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    star: {
+      type: DataTypes.FLOAT,
+      allowNull: true
+    },
+    review_count: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0
+      allowNull: true
+    },
+    category_code: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    total_price: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'user',
+    tableName: 'store_list',
     timestamps: false,
     indexes: [
       {
@@ -46,7 +53,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "userid" },
+          { name: "product_code" },
         ]
       },
     ]
