@@ -1,22 +1,30 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('bcode', {
-    Big: {
-      type: DataTypes.STRING(50),
+  return sequelize.define('category_code', {
+    category_code: {
+      type: DataTypes.STRING(100),
       allowNull: false,
       primaryKey: true
     },
-    Mid: {
-      type: DataTypes.STRING(50),
+    category_name: {
+      type: DataTypes.STRING(100),
       allowNull: false
     },
-    Ename: {
+    top_code: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    mid_code: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    small_code: {
       type: DataTypes.STRING(100),
       allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'bcode',
+    tableName: 'category_code',
     timestamps: false,
     indexes: [
       {
@@ -24,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "Big" },
+          { name: "category_code" },
         ]
       },
     ]

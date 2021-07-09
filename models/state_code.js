@@ -7,12 +7,22 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     state: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(100),
       allowNull: false
     }
   }, {
     sequelize,
     tableName: 'state_code',
-    timestamps: false
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

@@ -18,7 +18,7 @@ let models = initModels(sequelize);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.user = models.user;
+db.cart = models.cart;
 db.commment = models.commment;
 db.history = models.history;
 db.bcode = models.bcode;

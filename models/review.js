@@ -1,17 +1,12 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('comment', {
+  return sequelize.define('review', {
     id: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     userid: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
-    review: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
@@ -19,17 +14,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    S_code: {
+    store_code: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    product: {
+    product_code: {
       type: DataTypes.STRING(100),
       allowNull: false
+    },
+    review_text: {
+      type: DataTypes.TEXT,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'comment',
+    tableName: 'review',
     timestamps: false,
     indexes: [
       {

@@ -1,31 +1,23 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('storelist', {
+  return sequelize.define('item_reco', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    S_code: {
-      type: DataTypes.STRING(50),
+    userid: {
+      type: DataTypes.STRING(100),
       allowNull: true
     },
-    P_code: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    price: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    review: {
-      type: DataTypes.STRING(50),
+    product_code: {
+      type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'storelist',
+    tableName: 'item_reco',
     timestamps: false,
     indexes: [
       {
