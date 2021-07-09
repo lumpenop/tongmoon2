@@ -1,9 +1,14 @@
-let login = (req,res)=>{
+require('dotenv').config();
+const fetch = require('node-fetch');
+const mysql = require('mysql');
+const axios = require('axios');
 
+let login = (req,res)=>{
+    res.render('./user/mypage_login')
 }
 
 let loginPost = (req,res)=>{
-
+    res.send('완료')
 }
 
 let mypage = (req,res)=>{
@@ -46,21 +51,19 @@ const kakao = {
 
 //카카오 계정으로 가입하는 페이지로 보내주기
 let kakaoLogin = (req,res)=>{
-    
         const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakao.clientID}&redirect_uri=${kakao.redirectUri}&response_type=code`;
         res.redirect(kakaoAuthURL);
     }
 
-
 ////가입 후 콜백
 let kakaoCB = async(req,res)=>{
     try{//access토큰을 받기 위한 코드
-    kakaoToken = await axios({//token
+    kakaoToken = await fetch({//token
         method: 'POST',
         url: 'https://kauth.kakao.com/oauth/token',
         headers:{
             'content-type':'application/x-www-form-urlencoded'
-        },
+        }, 
         data:qs.stringify({
             grant_type: 'authorization_code',//특정 스트링
             client_id:kakao.clientID,
@@ -73,6 +76,8 @@ let kakaoCB = async(req,res)=>{
         res.json(err.data);
     }
     //access토큰을 받아서 사용자 정보를 알기 위해 쓰는 코드
+    console.log(kakaoToken);
+    
     let users;
     try{
 //access정보를 가지고 또 요청해야 정보를 가져올 수 있음.
@@ -83,7 +88,6 @@ let kakaoCB = async(req,res)=>{
                 Authorization: `Bearer ${kakaoToken.data.access_token}`
             }//헤더에 내용을 보고 보내주겠다.
         })
-
         res.cookie('access_token',kakaoToken.data.access_token);
         res.cookie('token_type',kakaoToken.data.token_type);
         res.cookie('refresh_token',kakaoToken.data.refresh_token);
@@ -103,7 +107,7 @@ let kakaoCB = async(req,res)=>{
     makemember(userid,user_email);
 
     async function makemember(a,c){
-        let mem = await fetch('http://localhost:3000/user/signup/idChk',{
+        let mem = await fetch('http://localhost:3500/user/signup/idChk',{
             method:'post',
             headers:{"Content-Type": "application/json"},
             body:JSON.stringify({userid:a})
@@ -151,6 +155,7 @@ let naverCB=async(req,res)=>{
      + client_id + '&client_secret=' + client_secret + '&redirect_uri=' + redirectURI + '&code=' + code + '&state=' + state;
 //토큰 받기 과정
     try{
+        console.log('token')
         let naverlog = await fetch(api_url,{
             method:"post",
             headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
@@ -190,7 +195,7 @@ let naverCB=async(req,res)=>{
             })
 
 
-            let rst= await fetch('http://localhost:3000/user/signup/idChk',{
+            let rst= await fetch('http://localhost:3500/user/signup/idChk',{
                 method:'post',
                 headers:{"Content-Type": "application/json"},
                 body:JSON.stringify({userid:userid})
@@ -213,6 +218,10 @@ let naverCB=async(req,res)=>{
     }catch(e){console.log(e)}
 }
 
+// module.exports = {
+//     login, loginPost,mypage,review,cart,history,order_history,pay,payPost,naverCB,naverLogin,kakaoCB,kakaoLogin,
+// }
+
 module.exports = {
-    login, loginPost,mypage,review,cart,history,order_history,pay,payPost,naverCB,naverLogin,kakaoCB,kakaoLogin,
+    login, naverCB,naverLogin,kakaoCB,kakaoLogin,loginPost,
 }

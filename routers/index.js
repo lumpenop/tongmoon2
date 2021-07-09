@@ -6,9 +6,9 @@ const user = require('./user/index');
 // const search = require('./search/index')
 
 
-// router.use('/user',user);
+router.use('/user',user);
 // router.use('/menu',menu);
 // router.use('/search',search)
-router.use('/',main);
 
+router.use('/',main)
 module.exports=router;
