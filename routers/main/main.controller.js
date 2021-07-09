@@ -2,7 +2,7 @@ const {user} = require('../../models/index')
 
 
 let main = async(req,res)=>{
-    res.send('yoyouyo');
+    res.render('./main/main')
 }
 
 // let join = async(req,res)=>{

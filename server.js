@@ -9,13 +9,13 @@ const mysql = require('mysql');
 const {sequelize} = require('./models');
 
 
-sequelize.sync({force:true,})
-.then(()=>{
-    console.log('접속 완료');
-}).catch((e)=>{
-    console.log(e);
-    console.log('접속 실패');
-})
+var connection = mysql.createConnection({
+    host     : process.env.mysql_host,
+    user     : process.env.mysql_user,
+    password : process.env.mysql_password,
+    database : 'tme'
+});
+
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.set('view engine','html')
