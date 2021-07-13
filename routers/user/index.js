@@ -22,7 +22,7 @@ router.get('/auth/naver',userController.naverLogin);
 router.get('/auth/kakao/callback',userController.kakaoCB);
 router.get('/auth/kakao',userController.kakaoLogin);
 
-
+router.post('/signup/idChk',userController.idChk);
 
 module.exports=router;
 
