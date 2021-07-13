@@ -29,4 +29,7 @@ db.storelist = models.storelist;
 db.itemreco = models.itemreco;
 db.contentsreco = models.contentsreco;
 
+/*****고침****/
+db.user = models.user;
+
 module.exports = db;

@@ -3,6 +3,8 @@ const fetch = require('node-fetch');
 const mysql = require('mysql');
 const axios = require('axios');
 
+const {user} = require('../../models/index');
+
 let login = (req,res)=>{
     res.render('./user/mypage_login')
 }
@@ -39,6 +41,22 @@ let pay = (req,res)=>{
 let payPost = (req,res)=>{
 
 }
+
+
+let idChk = async(req,res)=>{
+    let idFlag = false;
+    
+    let userid = req.body.userid;
+    let result = await user.findOne({
+        where:{userid,}
+    });
+    if (!result) idFlag =true;
+    res.json({
+        check:idFlag,
+        userid,
+    })
+}
+
 
 
 
@@ -184,6 +202,9 @@ let naverCB=async(req,res)=>{
             }).then(res=>{
                 return res.json();
             }).then(json=>{
+
+
+                console.log(json.response);
                 userid=json.response.id;
                 res.cookie('userid',userid);
                 user_email = json.response.email;
@@ -194,15 +215,20 @@ let naverCB=async(req,res)=>{
                 //네이버는 이름을 던져준다.
             })
 
+            
+
 
             let rst= await fetch('http://localhost:3500/user/signup/idChk',{
                 method:'post',
                 headers:{"Content-Type": "application/json"},
                 body:JSON.stringify({userid:userid})
-            }).then(res=>{
-                console.log
+            }).then(res2=>{
+                console.log('***********res2');
+              
                 return res.json()
             }).then (async(json)=>{
+                console.log('88888888888888json')
+                console.log(json.check);
                 if (json.check){
                     let signup1 = await user.create({
                     username,userid,user_email,user_number,
@@ -223,5 +249,5 @@ let naverCB=async(req,res)=>{
 // }
 
 module.exports = {
-    login, naverCB,naverLogin,kakaoCB,kakaoLogin,loginPost,
+    idChk, login, naverCB,naverLogin,kakaoCB,kakaoLogin,loginPost,
 }
