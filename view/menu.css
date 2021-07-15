@@ -1,4 +1,4 @@
-*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0 auto; overflow-x: hidden;}
+*{font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림" ; margin:0; padding: 0; overflow-x: hidden;}
 
 li,ul{
     list-style: none;
