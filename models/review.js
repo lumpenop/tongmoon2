@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('review', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -11,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     star: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.FLOAT,
       allowNull: false
     },
     store_code: {
