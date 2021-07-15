@@ -2,6 +2,14 @@ require('dotenv').config();
 const fetch = require('node-fetch');
 const mysql = require('mysql');
 const axios = require('axios');
+const qs = require('qs');
+const bodyParser=require('body-parser');
+const express= require('express')
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
 
 const {user} = require('../../models/index');
 
@@ -69,6 +77,7 @@ const kakao = {
 
 //카카오 계정으로 가입하는 페이지로 보내주기
 let kakaoLogin = (req,res)=>{
+        console.log('카카오로그인들어감')
         const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakao.clientID}&redirect_uri=${kakao.redirectUri}&response_type=code`;
         res.redirect(kakaoAuthURL);
     }
@@ -76,12 +85,12 @@ let kakaoLogin = (req,res)=>{
 ////가입 후 콜백
 let kakaoCB = async(req,res)=>{
     try{//access토큰을 받기 위한 코드
-    kakaoToken = await fetch({//token
+    kakaoToken = await axios({//token
         method: 'POST',
         url: 'https://kauth.kakao.com/oauth/token',
         headers:{
             'content-type':'application/x-www-form-urlencoded'
-        }, 
+        },
         data:qs.stringify({
             grant_type: 'authorization_code',//특정 스트링
             client_id:kakao.clientID,
@@ -94,8 +103,6 @@ let kakaoCB = async(req,res)=>{
         res.json(err.data);
     }
     //access토큰을 받아서 사용자 정보를 알기 위해 쓰는 코드
-    console.log(kakaoToken);
-    
     let users;
     try{
 //access정보를 가지고 또 요청해야 정보를 가져올 수 있음.
@@ -115,7 +122,7 @@ let kakaoCB = async(req,res)=>{
         userid = users.data.id;
         nickname = users.data.kakao_account.profile.nickname;
         res.cookie('userid',userid);
-        res.cookie('username',username);        
+        // res.cookie('username',username);        
         user_email = users.data.kakao_account.email;
 
     }catch(e){

@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     top_code: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,
