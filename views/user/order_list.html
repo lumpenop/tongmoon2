@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order_list.css">
     <link rel="stylesheet" href="common.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../view/cart.css">
     <title>Document</title>
 </head>
 <body>
     <div class="wrap">
-    <div class="order_wrap">
-        <div>주문목록</div>
-            <li>
-                <input class="order_search" type="text">
-            </li>
+        <div class="order_wrap">
+
+            <div id="wrap">
+                <div id="header">
+                    <ul>
+                        <li id="top_test">
+                            <i class="fas fa-chevron-left fa-2x"></i>
+                            <h2>주문목록</h2>
+                        </li>
+                        <input class="order_search" type="text">
+                        <li><a href="#">관리하기</a></li>
+                    </ul>
+                </div>
+                <div id="cart_contens">
+                    <ul>
+                        <li class="product">
+                            <div class="p_picture">사진<img src=""></div>
+                            <div class="p_text">
+                                <h1 class="text_low">잘 읽은 토맛 토</h1>
+                                <p class="text_low">10000원 </p>
+                                <p>1개</p>
+                                <a class="del_btn text_low" href="#">교환,반품 신청</a>
+                                <a class="cart_btn text_low" href="#">장바구니 담기</a>
+                            </div>
+                            <a class="buyreview" href="#"> 구매후기 쓰기</a>
+                        </li>
+                        <li class="product">
+                            <div class="p_picture">사진<img src=""></div>
+                            <div class="p_text">
+                                <h1 class="text_low">잘 읽은 토맛 토</h1>
+                                <p class="text_low">10000원 </p>
+                                <p>1개</p>
+                                <a class="del_btn text_low" href="#">교환,반품 신청</a>
+                                <a class="cart_btn text_low" href="#">장바구니 담기</a>
+                            </div>
+                            <a class="buyreview" href="#"> 구매후기 쓰기</a>
+                        </li>
+                        <li class="product">
+                            <div class="p_picture">사진<img src=""></div>
+                            <div class="p_text">
+                                <h1 class="text_low">잘 읽은 토맛 토</h1>
+                                <p class="text_low">10000원 </p>
+                                <p>1개</p>
+                                <a class="del_btn text_low" href="#">교환,반품 신청</a>
+                                <a class="cart_btn text_low" href="#">장바구니 담기</a>
+                            </div>
+                            <a class="buyreview" href="#"> 구매후기 쓰기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="order_list_wrap">
-        <dlv class="order_view">
-            <ul>
-                <li>
-                    <p>픽업완료</p>
-                    <P>6/29 (화) 7시</P>
-                </li>
-                <li>img</li>
-                <li>
-                    <p>물건명</p>
-                    <p>16490원</p>
-                    <p>1개</p>
-                    <button>장바구니 담기</button>
-                </li>
-            </ul>
-            <li>
-                <button>구매후기쓰기</button>
-            </li>
-        </dlv>
-    </div>
-    </body>
+</body>
+
 </html>

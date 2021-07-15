@@ -1,0 +1,24 @@
+.order_search{
+    width:90%;
+    height: 30%;
+}
+
+.buyreview{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+    border:  1px solid;
+    border-radius:1em ;
+    display: inline-block;
+}
+
+.product {
+    width: 84vw;
+    height: 43vh;
+    margin: 3vh auto;
+    background: #ffffff;
+    box-shadow: 0.5em 0.5em 0.5em -0.5em grey;
+    padding: 2%;
+    box-sizing: border-box;
+}
